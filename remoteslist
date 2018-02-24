@@ -1,0 +1,17 @@
+# __-=[Fichero de Configuración de los Remotes para RClone]=-__
+#
+# Este fichero contiene un Remote por línea. El separador de campo, actualmente es el símbolo '$'.
+# RemName: 	es el nombre del remote a secas.
+# PathInRem: 	Directorio (si se requiere) del que se parte para realizar el punto de montaje en el Remote. No se tiene en cuenta el caracter raíz /.
+#		Vacío para dejar la raíz por defecto.  
+# MountPoint:	Directorio del sistema sobre el que vamos a realizar el montaje.	
+# MountPointOptions: Opciones específicas del montaje (flags como --allow-other --read only).
+# RCloneOptions: Opciones específicas de rclone (como -v, --stats...).
+#
+#Quedando así el patron por línea: RemName$PathInRem$MountPoint$MountPointOptions$RCloneOptions
+#
+# Ej de montaje de un remote llamado Temporal desde un subdirectorio testing, sobre un directorio del sistema llamado /test, con la opcion de verbose y opciones de montaje de solo lectura 
+# Temporal$testing$/test$--read-only$-v -tpslimit 6
+#
+#RemName$PathInRem$MountPoint$MountPointOptions$RCloneOptions
+
