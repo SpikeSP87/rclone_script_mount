@@ -6,17 +6,17 @@ Este script comprueba si una lista de remotes de rclone está correctamente mont
 SOBRE EL SCRIPT:
 ----------------
 Es necesario personalizar estas variables dentro del script:
-·listremotes: referido al fichero que contiene la lista de remotes y por linea la config del remote (consultar fichero para personalizarlo). Por defecto he indicado que se almacena junto a este script manteniendo el mismo nombre (no obstante se puede personalizar tanto el nombre del fichero como la ruta en la que se encuentra, y para ello está la variable al inicio del script).
-·rclone_path: ruta absoluta donde se encuentra el binario de rclone. 
+- listremotes: referido al fichero que contiene la lista de remotes y por linea la config del remote (consultar fichero para personalizarlo). Por defecto he indicado que se almacena junto a este script manteniendo el mismo nombre (no obstante se puede personalizar tanto el nombre del fichero como la ruta en la que se encuentra, y para ello está la variable al inicio del script).
+- rclone_path: ruta absoluta donde se encuentra el binario de rclone. 
 
 SOBRE EL FICHERO REMOTESLIST:
 -----------------------------
 Este fichero contiene un Remote por línea. El separador de campo, actualmente es el símbolo '$'.
-· RemName: 	es el nombre del remote a secas.
-· PathInRem: 	Directorio (si se requiere) del que se parte para realizar el punto de montaje en el Remote. No se tiene en cuenta el caracter raíz /. Lo dejamos vacío para dejar la raíz por defecto.  
-· MountPoint:	Directorio del sistema sobre el que vamos a realizar el montaje.	
-· MountPointOptions: Opciones específicas del montaje (flags como --allow-other --read only).
-· RCloneOptions: Opciones específicas de rclone (como -v, --stats...).
+- RemName: 	es el nombre del remote a secas.
+- PathInRem: 	Directorio (si se requiere) del que se parte para realizar el punto de montaje en el Remote. No se tiene en cuenta el caracter raíz /. Lo dejamos vacío para dejar la raíz por defecto.  
+- MountPoint:	Directorio del sistema sobre el que vamos a realizar el montaje.	
+- MountPointOptions: Opciones específicas del montaje (flags como --allow-other --read only).
+- RCloneOptions: Opciones específicas de rclone (como -v, --stats...).
 
 Quedando así el patron por línea: RemName$PathInRem$MountPoint$MountPointOptions$RCloneOptions
 
