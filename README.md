@@ -18,15 +18,15 @@ Este fichero contiene un Remote por línea. El separador de campo, actualmente e
 - MountPointOptions: Opciones específicas del montaje (flags como --allow-other --read only).
 - RCloneOptions: Opciones específicas de rclone (como -v, --stats...).
 
-Quedando así el patron por línea: RemName$PathInRem$MountPoint$MountPointOptions$RCloneOptions
+Quedando así el patron por línea: `RemName$PathInRem$MountPoint$MountPointOptions$RCloneOptions`
 
 Vamos a ver un par de ejemplos para entenderlo mejor. Imaginemos que tengo 2 remotes definidos, temp1 y temp2 respectivamente. Manualmente los montaría de esta forma (escogidos como ejemplos para presentar las casuísticas principales):
-1. rclone --tpslimit 6 --transfers=4 mount --allow-other temp1: /mnt/temp1 
-2. rclone -v --tpslimit 4 mount --allow-other ---read-only temp2:/Data/ex /mnt/temp2
+1. `rclone --tpslimit 6 --transfers=4 mount --allow-other temp1: /mnt/temp1` 
+2. `rclone -v --tpslimit 4 mount --allow-other ---read-only temp2:/Data/ex /mnt/temp2`
 
 De esta forma traduciría estos comandos de montaje al fichero remoteslist:
-1. temp1$$/mnt/temp1$--allow-other$--tpslimit 6 --transfers=4
-2. temp2$Data/ex$/mnt/temp2$--allow-other --read-only$-v --tpslimit 4 
+1. `temp1$$/mnt/temp1$--allow-other$--tpslimit 6 --transfers=4`
+2. `temp2$Data/ex$/mnt/temp2$--allow-other --read-only$-v --tpslimit 4`
 
 
 MODO DE USO:
@@ -34,7 +34,7 @@ MODO DE USO:
 1. Descargar el script, y el fichero remoteslist.
 2. Darle permisos de ejecución al script, y revisar que hay permisos de lectura para poder llegar al fichero remoteslist.
 3. Personalizar el fichero remoteslist con nuestros remotes (que ya deberíamos tener definidos previamente). Al igual comprobar que las rutas para el montaje están creadas y que todo está correctamente para realizar el montaje. VER APARTADO SOBRE EL FICHERO REMOTESLIST para dudas.
-4. Programar el script en cron, como una tarea cualquiera, para que se ejecute como queremos y con el mismo usuario con el que hemos realizado la config de los remotes (o en su defecto, darle el conf de rclone en el comando de montaje). Por ejemplo para que se ejecute cada minuto: "*/1 * * * *  script_rclone.sh" ó cada 5 min: "*/5 * * * *  script_rclone.sh". 
+4. Programar el script en cron, como una tarea cualquiera, para que se ejecute como queremos y con el mismo usuario con el que hemos realizado la config de los remotes (o en su defecto, darle el conf de rclone en el comando de montaje). Por ejemplo para que se ejecute cada minuto: `*/1 * * * *  script_rclone.sh` ó cada 5 min: `*/5 * * * *  script_rclone.sh`. 
 5. Listo. Esperar a que se ejecute la tarea (en algunos sistemas puede ser conveniente reiniciar).
 
 ANOTACIONES:
