@@ -7,8 +7,6 @@
 # rclone_path: ruta absoluta donde se encuentra el binario de rclone.
 #
 
-
-
 listremotes="./remoteslist"
 rclone_path="/bin"
 while read -r line
