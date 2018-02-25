@@ -19,7 +19,7 @@ do
         	mount_options=`echo $line | cut -d $ -f 4`
         	rclone_options=`echo $line | cut -d $ -f 5`
 		check_mount=$your_remote_name:$path_in_remote
-        	is_mount=`mount | grep $check_mount | grep $mount_path`
+        	is_mount=`mount | grep -e $check_mount -e $mount_path`
         	date=`date +%d-%m-%Y:%H:%M:%S`
 
         	if [ "$is_mount" == "" ]
